@@ -10,6 +10,7 @@ class Burrito:
         self.set_pico(pico)
         self.set_corn(corn)
 
+# setters - can call in the terminal .set_meat('steak') to change the contents of your burrito
     def set_to_go(self, to_go):
         valid_types = [True, False]
         if to_go in valid_types:
@@ -61,6 +62,8 @@ class Burrito:
     def set_meat(self, meat):
         self.meat.set_value(meat)
 
+
+# getters - can call using .get_meat() to return the value
     def get_meat(self):
         return self.meat.get_value()
 
@@ -155,3 +158,14 @@ print(a_burrito.get_cost())
 # print(a_burrito.guacamole)
 a_burrito = Burrito("pork", False, "white", "black", extra_meat = True, guacamole = True)
 print(a_burrito.get_cost())
+
+# here, we have to query the get_value() method from the meat class, since that is where the 'return'
+# statement is. 'meat' passed into burrito constructor as a Meat object. Meat object has .get_value() method
+# this method, when called, returns the value of the meat.value variable (which is the type of meat)
+print(a_burrito.meat.get_value())
+
+# here, we can directly query the guacamole attribute, since it is a member of the burrito class
+print(a_burrito.guacamole)
+
+# we can also use the getter for guacamole:
+print(a_burrito.get_guacamole())
