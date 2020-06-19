@@ -22,24 +22,32 @@
 # Calling next_number 5 times would print 1, 2, 3, 5, and 8.
 
 
-class FibSeq:
-    def __init__(self):
-        self.back1 = 1
-        self.back2 = 0
+# class FibSeq:
+#     def __init__(self):
+#         self.back1 = 1
+#         self.back2 = 0
+#
+#     def next_number(self):
+#         current_num = self.back1 + self.back2
+#         self.back2 = self.back1
+#         self.back1 = current_num
+#         return current_num
+#
+#
+# # The code below will test your method. It's not used for
+# # grading, so feel free to change it. As written, it should
+# # print 1, 2, 3, 5, and 8.
+# newFib = FibSeq()
+# print(newFib.next_number())
+# print(newFib.next_number())
+# print(newFib.next_number())
+# print(newFib.next_number())
+# print(newFib.next_number())
 
-    def next_number(self):
-        current_num = self.back1 + self.back2
-        self.back2 = self.back1
-        self.back1 = current_num
-        return current_num
+def fibonacci(some_number):
+    if some_number > 2:
+       return fibonacci(some_number - 1) + fibonacci(some_number - 2)
+    else:
+       return 1
 
-
-# The code below will test your method. It's not used for
-# grading, so feel free to change it. As written, it should
-# print 1, 2, 3, 5, and 8.
-newFib = FibSeq()
-print(newFib.next_number())
-print(newFib.next_number())
-print(newFib.next_number())
-print(newFib.next_number())
-print(newFib.next_number())
+print(fibonacci(7))
